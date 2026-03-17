@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnmdhujg0128f"]
+
+[ext_resource type="Texture2D" uid="uid://b4a1s5nk1uios" path="res://AssetBundle/free.png" id="1_xnmp4"]
+
+[node name="Rouge" type="CanvasLayer"]
+
+[node name="UpgradeUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 147.0
+offset_bottom = 147.0
+
+[node name="CenterContainer" type="CenterContainer" parent="UpgradeUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UpgradeUI/CenterContainer"]
+layout_mode = 2
+
+[node name="UpgradeCard" type="Control" parent="UpgradeUI/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 100.0
+offset_right = 337.0
+offset_bottom = 471.97366
+texture = ExtResource("1_xnmp4")
+region_rect = Rect2(0, 0, 65.447464, 93.48329)
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 100.0
+offset_right = 684.0
+offset_bottom = 471.97366
+texture = ExtResource("1_xnmp4")
+region_rect = Rect2(0, 0, 65.447464, 93.48329)
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard"]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 100.0
+offset_right = 1032.0
+offset_bottom = 471.97366
+texture = ExtResource("1_xnmp4")
+region_rect = Rect2(0, 0, 65.447464, 93.48329)

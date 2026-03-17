@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://cs2jkqwx2pu12"]
+
+[ext_resource type="Texture2D" uid="uid://cosq13twg0ryy" path="res://AssetBundle/Sprites/ForestBackground.png" id="1_6igcf"]
+[ext_resource type="Script" uid="uid://csdh6ijopbetu" path="res://Script/GameManager.gd" id="1_mopgc"]
+[ext_resource type="PackedScene" uid="uid://c4mdeu2nlpuyk" path="res://Scene/Player.tscn" id="2_u6khg"]
+[ext_resource type="PackedScene" uid="uid://bhr3wmccy0g35" path="res://Scene/orc.tscn" id="3_cohtu"]
+[ext_resource type="PackedScene" uid="uid://kqxy5jj8dx6v" path="res://Scene/slime.tscn" id="3_ou18a"]
+[ext_resource type="FontFile" uid="uid://bemmtlklwogek" path="res://AssetBundle/Uranus_Pixel_11Px.ttf" id="5_ivtx6"]
+[ext_resource type="Texture2D" uid="uid://by3vu1q83xchh" path="res://AssetBundle/Button/pause-button.png" id="6_3xgnh"]
+[ext_resource type="Texture2D" uid="uid://bby07omyq5dtc" path="res://AssetBundle/Button/play-button.png" id="7_48ymf"]
+[ext_resource type="PackedScene" uid="uid://cnmdhujg0128f" path="res://Scene/rouge.tscn" id="9_tujvx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u6khg"]
+
+[node name="Node2D" type="Node2D" unique_id=680740542 node_paths=PackedStringArray("spawn_timer", "orc_spawn_time", "score_label", "game_over_label", "pause_button", "play_button")]
+y_sort_enabled = true
+script = ExtResource("1_mopgc")
+slime_scene = ExtResource("3_ou18a")
+orc_scene = ExtResource("3_cohtu")
+spawn_timer = NodePath("SlimeTimer")
+orc_spawn_time = NodePath("OrcTimer")
+score = 21
+score_label = NodePath("CanvasLayer/Label")
+game_over_label = NodePath("CanvasLayer/Game Over Label")
+pause_button = NodePath("CanvasLayer/PauseButton")
+play_button = NodePath("CanvasLayer/PlayButton")
+
+[node name="Background 1" type="Sprite2D" parent="." unique_id=2084270668]
+position = Vector2(-120, -1)
+texture = ExtResource("1_6igcf")
+metadata/_edit_lock_ = true
+
+[node name="Background 2" type="Sprite2D" parent="." unique_id=1136847664]
+position = Vector2(120, -1)
+texture = ExtResource("1_6igcf")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1839297787]
+zoom = Vector2(2.4, 2.4)
+
+[node name="Player" parent="." unique_id=1805111481 instance=ExtResource("2_u6khg")]
+position = Vector2(-169, 81)
+move_speed = 100.0
+
+[node name="Boundary" type="Node2D" parent="." unique_id=1793970061]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundary" unique_id=1390922251]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D" unique_id=673958881]
+position = Vector2(0, 135)
+shape = SubResource("WorldBoundaryShape2D_u6khg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundary" unique_id=138275569]
+rotation = -0.0005631923
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D2" unique_id=13169917]
+position = Vector2(-0.021942139, 38.999992)
+rotation = -3.1415927
+shape = SubResource("WorldBoundaryShape2D_u6khg")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Boundary" unique_id=1987192331]
+rotation = -0.0005631923
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D3" unique_id=1819408908]
+position = Vector2(-239.99997, -0.13516808)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_u6khg")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Boundary" unique_id=965731784]
+rotation = -0.0005631923
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D4" unique_id=1740851982]
+position = Vector2(239.99994, 0.1351515)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_u6khg")
+
+[node name="SlimeTimer" type="Timer" parent="." unique_id=1327806686]
+wait_time = 3.0
+autostart = true
+
+[node name="OrcTimer" type="Timer" parent="." unique_id=2137510474]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=641507793]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1413999344]
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 86.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("5_ivtx6")
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Game Over Label" type="Label" parent="CanvasLayer" unique_id=1496147356]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -11.5
+offset_right = 39.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0.3529412, 0, 1)
+theme_override_constants/outline_size = 60
+theme_override_fonts/font = ExtResource("5_ivtx6")
+theme_override_font_sizes/font_size = 120
+text = "Game Over !"
+
+[node name="Game Over Label2" type="Label" parent="CanvasLayer/Game Over Label" unique_id=1208188536]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.0
+offset_top = 63.0
+offset_right = 388.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0.3529412, 0, 1)
+theme_override_constants/outline_size = 60
+theme_override_fonts/font = ExtResource("5_ivtx6")
+theme_override_font_sizes/font_size = 60
+text = "Game By Skyps"
+
+[node name="PauseButton" type="TextureButton" parent="CanvasLayer" unique_id=1194075956]
+process_mode = 3
+offset_left = 1068.0
+offset_top = 3.0
+offset_right = 1580.0
+offset_bottom = 515.0
+scale = Vector2(0.1600154, 0.1600154)
+texture_normal = ExtResource("6_3xgnh")
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer" unique_id=500340353]
+process_mode = 3
+visible = false
+offset_left = 1080.0
+offset_top = 6.9999995
+offset_right = 1592.0
+offset_bottom = 519.0
+scale = Vector2(0.13335255, 0.13981457)
+texture_normal = ExtResource("7_48ymf")
+
+[node name="Rouge" parent="." unique_id=67160858 instance=ExtResource("9_tujvx")]
+visible = false
+
+[connection signal="timeout" from="SlimeTimer" to="." method="_spawn_slime"]
+[connection signal="timeout" from="OrcTimer" to="." method="_on_orc_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
