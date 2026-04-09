@@ -1,27 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnmdhujg0128f"]
+[gd_scene format=3 uid="uid://cnmdhujg0128f"]
 
 [ext_resource type="Texture2D" uid="uid://b4a1s5nk1uios" path="res://AssetBundle/free.png" id="1_xnmp4"]
 
-[node name="Rouge" type="CanvasLayer"]
+[node name="Rouge" type="CanvasLayer" unique_id=789222845]
 
-[node name="UpgradeUI" type="Control" parent="."]
+[node name="UpgradeUI" type="Control" parent="." unique_id=1825726830]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 147.0
 offset_bottom = 147.0
 
-[node name="CenterContainer" type="CenterContainer" parent="UpgradeUI"]
+[node name="CenterContainer" type="CenterContainer" parent="UpgradeUI" unique_id=2077948188]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UpgradeUI/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UpgradeUI/CenterContainer" unique_id=765394203]
 layout_mode = 2
 
-[node name="UpgradeCard" type="Control" parent="UpgradeUI/CenterContainer/HBoxContainer"]
+[node name="UpgradeCard" type="Control" parent="UpgradeUI/CenterContainer/HBoxContainer" unique_id=325273100]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard"]
+[node name="NinePatchRect" type="NinePatchRect" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard" unique_id=408579907]
 layout_mode = 0
 offset_left = 80.0
 offset_top = 100.0
@@ -30,7 +30,16 @@ offset_bottom = 471.97366
 texture = ExtResource("1_xnmp4")
 region_rect = Rect2(0, 0, 65.447464, 93.48329)
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard"]
+[node name="Label" type="Label" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard/NinePatchRect" unique_id=2030511845]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 120.0
+offset_right = 153.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "待选择1"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard" unique_id=1942329814]
 layout_mode = 0
 offset_left = 427.0
 offset_top = 100.0
@@ -39,7 +48,16 @@ offset_bottom = 471.97366
 texture = ExtResource("1_xnmp4")
 region_rect = Rect2(0, 0, 65.447464, 93.48329)
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard"]
+[node name="Label" type="Label" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard/NinePatchRect2" unique_id=1029031998]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 120.0
+offset_right = 153.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "待选择2"
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard" unique_id=2130178538]
 layout_mode = 0
 offset_left = 775.0
 offset_top = 100.0
@@ -47,3 +65,12 @@ offset_right = 1032.0
 offset_bottom = 471.97366
 texture = ExtResource("1_xnmp4")
 region_rect = Rect2(0, 0, 65.447464, 93.48329)
+
+[node name="Label" type="Label" parent="UpgradeUI/CenterContainer/HBoxContainer/UpgradeCard/NinePatchRect3" unique_id=2024905282]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 120.0
+offset_right = 153.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "待选择3"
