@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://c25fgykq58x7g"]
+
+[ext_resource type="Script" uid="uid://bvam1vns2badi" path="res://Script/EventResource.gd" id="1_joy36"]
+
+[resource]
+script = ExtResource("1_joy36")
+event_name = "翻滚速度提升"
+description = "提升翻滚速度"
+event_type = "stat_change"
+stat_name = "roll_speed"
+stat_value = 10
+metadata/_custom_type_script = "uid://bvam1vns2badi"

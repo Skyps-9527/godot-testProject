@@ -11,10 +11,28 @@ extends Node2D
 @export var pause_button: TextureButton
 @export var play_button: TextureButton
 @onready var Rouge = get_node("Rouge")
-
+var all_events: Array[EventResource] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	load_all_events()
+	
+func load_all_events():
+	var dir = DirAccess.open("res://Event")
+	if not dir:
+		print("找不到 Event 文件夹")
+		return
+	dir.list_dir_begin()
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		if file.ends_with(".tres"):
+			var event = load("res://Event/" + file)
+			if event:
+				all_events.append(event)
+	dir.list_dir_end()
+	print("已加载 ", all_events.size(), " 个事件")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

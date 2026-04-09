@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c4mdeu2nlpuyk"]
+[gd_scene format=3 uid="uid://c4mdeu2nlpuyk"]
 
 [ext_resource type="Script" uid="uid://biwqb06ufrtto" path="res://Script/player.gd" id="1_3eeal"]
 [ext_resource type="Texture2D" uid="uid://bl40iracpiltp" path="res://AssetBundle/Sprites/Foxy.png" id="1_6l3be"]
@@ -172,37 +172,37 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3eeal"]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
+[node name="Player" type="CharacterBody2D" unique_id=425945859 node_paths=PackedStringArray("animator")]
 script = ExtResource("1_3eeal")
 move_speed = 200.0
 animator = NodePath("AnimatedSprite2D")
 bullet_scene = ExtResource("2_jvxg0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1734555995]
 sprite_frames = SubResource("SpriteFrames_pmp2f")
 animation = &"roll"
 autoplay = "idle"
 frame_progress = 0.1495908
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2109073707]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_3eeal")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1245709077]
 wait_time = 0.5
 autostart = true
 
-[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+[node name="FireSound" type="AudioStreamPlayer2D" parent="." unique_id=1158115618]
 stream = ExtResource("4_mud5u")
 
-[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="." unique_id=611049573]
 stream = ExtResource("5_fvocf")
 
-[node name="RunningSound" type="AudioStreamPlayer2D" parent="."]
+[node name="RunningSound" type="AudioStreamPlayer2D" parent="." unique_id=1344032745]
 stream = ExtResource("6_pmp2f")
 autoplay = true
 
-[node name="RestartTimer" type="Timer" parent="."]
+[node name="RestartTimer" type="Timer" parent="." unique_id=1631175958]
 wait_time = 3.0
 one_shot = true
 
