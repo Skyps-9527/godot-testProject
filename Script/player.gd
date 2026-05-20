@@ -10,6 +10,7 @@ var roll_dir := Vector2.ZERO
 var roll_time := 0.0
 
 var is_game_over : bool = false
+var bullet_count: int = 1
 
 @export var bullet_scene : PackedScene
 
@@ -75,12 +76,15 @@ func game_over():
 func _on_fire() -> void:
 	if velocity != Vector2.ZERO or is_game_over:
 		return
-	
+
 	$FireSound.play()
-		
-	var bullet_node = bullet_scene.instantiate()
-	bullet_node.position = position + Vector2(6,6)
-	get_tree().current_scene.add_child(bullet_node)
+
+	var spread = (bullet_count - 1) * 6.0
+	for i in range(bullet_count):
+		var bullet_node = bullet_scene.instantiate()
+		var y_offset = -spread / 2.0 + i * 6.0 if bullet_count > 1 else 0.0
+		bullet_node.position = position + Vector2(6, 6 + y_offset)
+		get_tree().current_scene.add_child(bullet_node)
 	
 func start_roll(dir: Vector2):
 	is_rolling = true

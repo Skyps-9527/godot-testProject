@@ -45,7 +45,7 @@ func die():
 		
 	if(get_tree().current_scene.skill_score >= 10):
 		get_tree().current_scene.skill_score -= 10
-		get_tree().current_scene.Rouge.visible = true
+		get_tree().current_scene.trigger_rouge()
 
 	await get_tree().create_timer(0.6).timeout
 	queue_free()

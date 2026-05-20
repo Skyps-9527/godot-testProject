@@ -29,7 +29,7 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		if(get_tree().current_scene.skill_score >= 10):
 			get_tree().current_scene.skill_score -= 10
-			get_tree().current_scene.Rouge.visible = true
+			get_tree().current_scene.trigger_rouge()
 		
 		
 		

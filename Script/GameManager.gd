@@ -15,6 +15,7 @@ var all_events: Array[EventResource] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_all_events()
+	Rouge.upgrade_selected.connect(_on_upgrade_selected)
 	
 func load_all_events():
 	var dir = DirAccess.open("res://Event")
@@ -55,6 +56,26 @@ func _on_orc_timer_timeout() -> void:
 		orc_node.position = Vector2(260, randf_range(50, 115))
 		get_tree().current_scene.add_child(orc_node)
 		
+
+
+func trigger_rouge() -> void:
+	var available = all_events.duplicate()
+	available.shuffle()
+	var selected: Array[EventResource] = []
+	for i in min(3, available.size()):
+		selected.append(available[i])
+	Rouge.show_panel(selected)
+
+
+func _on_upgrade_selected(event: EventResource) -> void:
+	var player = get_node("Player")
+	match event.stat_name:
+		"speed":
+			player.move_speed += event.stat_value
+		"bullet":
+			player.bullet_count += event.stat_value
+		"roll_speed":
+			player.roll_speed += event.stat_value
 
 
 func show_game_over():

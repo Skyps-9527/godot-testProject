@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cnmdhujg0128f"]
 
 [ext_resource type="Texture2D" uid="uid://b4a1s5nk1uios" path="res://AssetBundle/free.png" id="1_xnmp4"]
+[ext_resource type="Script" uid="uid://clq7drxp80tbt" path="res://Script/rouge.gd" id="2_rouge"]
 
 [node name="Rouge" type="CanvasLayer" unique_id=789222845]
+script = ExtResource("2_rouge")
 
 [node name="UpgradeUI" type="Control" parent="." unique_id=1825726830]
 layout_mode = 3
