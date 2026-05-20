@@ -6,3 +6,4 @@ class_name EventResource
 @export var event_type: String = ""      # 如 "stat_change", "add_item", "start_battle"
 @export var stat_name: String = ""       # 如 "health", "gold"
 @export var stat_value: int = 0
+@export var event_icon: Texture2D

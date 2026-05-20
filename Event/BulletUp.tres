@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://bp485uqwk8byr"]
 
 [ext_resource type="Script" uid="uid://bvam1vns2badi" path="res://Script/EventResource.gd" id="1_hkilt"]
+[ext_resource type="Texture2D" uid="uid://cq0vc5w8hi22g" path="res://AssetBundle/Image/QQ20260415-233107.png" id="1_x1sju"]
 
 [resource]
 script = ExtResource("1_hkilt")
@@ -9,4 +10,5 @@ description = "增加同时发射的子弹数量"
 event_type = "stat_change"
 stat_name = "bullet"
 stat_value = 1
+event_icon = ExtResource("1_x1sju")
 metadata/_custom_type_script = "uid://bvam1vns2badi"

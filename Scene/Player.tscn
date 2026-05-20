@@ -180,9 +180,8 @@ bullet_scene = ExtResource("2_jvxg0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1734555995]
 sprite_frames = SubResource("SpriteFrames_pmp2f")
-animation = &"roll"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.1495908
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2109073707]
 position = Vector2(0, 3)
