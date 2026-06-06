@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_hkilt")
-event_name = "子弹数量提升·"
+event_name = "子弹数量提升"
 description = "增加同时发射的子弹数量"
 event_type = "stat_change"
 stat_name = "bullet"

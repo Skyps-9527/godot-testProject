@@ -6,6 +6,8 @@ extends Node2D
 @export var orc_spawn_time : Timer
 @export var score : int = 0
 @export var skill_score: int = 0
+var next_rouge_threshold: int = 10
+var rouge_step: int = 10
 @export var score_label : Label
 @export var game_over_label: Label
 @export var pause_button: TextureButton
@@ -59,6 +61,8 @@ func _on_orc_timer_timeout() -> void:
 
 
 func trigger_rouge() -> void:
+	rouge_step += 10
+	next_rouge_threshold += rouge_step
 	var available = all_events.duplicate()
 	available.shuffle()
 	var selected: Array[EventResource] = []

@@ -27,8 +27,7 @@ func _on_area_entered(area: Area2D) -> void:
 		get_tree().current_scene.score += 1
 		get_tree().current_scene.skill_score += 1
 		
-		if(get_tree().current_scene.skill_score >= 10):
-			get_tree().current_scene.skill_score -= 10
+		if(get_tree().current_scene.skill_score >= get_tree().current_scene.next_rouge_threshold):
 			get_tree().current_scene.trigger_rouge()
 		
 		

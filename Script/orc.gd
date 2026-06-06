@@ -43,8 +43,7 @@ func die():
 	get_tree().current_scene.score += 2
 	get_tree().current_scene.skill_score += 2
 		
-	if(get_tree().current_scene.skill_score >= 10):
-		get_tree().current_scene.skill_score -= 10
+	if(get_tree().current_scene.skill_score >= get_tree().current_scene.next_rouge_threshold):
 		get_tree().current_scene.trigger_rouge()
 
 	await get_tree().create_timer(0.6).timeout

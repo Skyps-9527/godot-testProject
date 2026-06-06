@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var move_speed : float = 50
+@export var move_speed : float = 500
 @export var animator : AnimatedSprite2D
 @export var roll_speed : float = 250.0
 @export var roll_duration : float = 0.15

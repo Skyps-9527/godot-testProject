@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_8wiqg")
 event_name = "速度提升"
-description = "增加移动速度2点"
+description = "增加移动速度50点"
 event_type = "stat_change"
 stat_name = "speed"
-stat_value = 2
+stat_value = 50
 metadata/_custom_type_script = "uid://bvam1vns2badi"

@@ -40,7 +40,6 @@ zoom = Vector2(2.4, 2.4)
 
 [node name="Player" parent="." unique_id=1805111481 instance=ExtResource("2_u6khg")]
 position = Vector2(-169, 81)
-move_speed = 100.0
 
 [node name="Boundary" type="Node2D" parent="." unique_id=1793970061]
 metadata/_edit_lock_ = true
